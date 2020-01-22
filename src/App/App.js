@@ -9,7 +9,19 @@ import firebase from 'firebase/app';
 import 'firebase/auth';
 import firebaseConnection from '../helpers/data/connection';
 
+import Auth from '../components/pages/Auth/Auth';
+import Home from '../components/pages/Home/Home';
+
 import './App.scss';
+
+const PublicRoute = ({ component: Component, authed, ...rest }) => {
+  const routeChecker = (props) => (authed === false ? <Component {...props} {...rest}/> : <Redirect to={{ pathname: '/', state: { from: props.location } }} />);
+  return <Route {...rest} render={(props) => routeChecker(props)} />;
+};
+const PrivateRoute = ({ component: Component, authed, ...rest }) => {
+  const routeChecker = (props) => (authed === true ? <Component {...props} {...rest}/> : <Redirect to={{ pathname: '/auth', state: { from: props.location } }} />);
+  return <Route {...rest} render={(props) => routeChecker(props)} />;
+};
 
 firebaseConnection();
 
@@ -36,7 +48,12 @@ class App extends React.Component {
     const { authed } = this.state;
     return (
       <div className="App">
-        <button className="btn btn-outline-success">Button</button>
+        <Router>
+          <Switch>
+          <PrivateRoute path="/" exact component={Home} authed={authed} />
+          <PublicRoute path="/auth" exact component={Auth} authed={authed} />
+          </Switch>
+        </Router>
       </div>
     );
   }
