@@ -11,6 +11,7 @@ import firebaseConnection from '../helpers/data/connection';
 
 import Auth from '../components/pages/Auth/Auth';
 import Home from '../components/pages/Home/Home';
+import Search from '../components/pages/Search/Search';
 
 import './App.scss';
 
@@ -52,6 +53,7 @@ class App extends React.Component {
           <Switch>
           <PrivateRoute path="/" exact component={Home} authed={authed} />
           <PublicRoute path="/auth" exact component={Auth} authed={authed} />
+          <PrivateRoute path="/search" exact component={Search} authed={authed} />
           </Switch>
         </Router>
       </div>
