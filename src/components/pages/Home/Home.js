@@ -9,6 +9,7 @@ class Home extends React.Component {
       <>
       <h1>Home Page</h1>
       <Link className="btn btn-primary" to="/search">Go to search Page</Link>
+      <Link className="btn btn-secondary" to={`/collection/${this.props.uid}`}>Go to My Colletion</Link>
       </>
     );
   }
