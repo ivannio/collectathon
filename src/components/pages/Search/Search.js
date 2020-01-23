@@ -3,6 +3,8 @@ import rawgData from '../../../helpers/data/rawgData';
 
 import './Search.scss';
 
+import SearchGameCard from '../SearchGameCard/SearchGameCard';
+
 class Search extends React.Component {
   state = {
     input: '',
@@ -30,12 +32,16 @@ class Search extends React.Component {
    }
 
    render() {
+     const { games } = this.state;
      return (
        <>
         <h1>Search for a game</h1>
         <form>
-        <input name="game-query" onChange={this.handleChange} /><span><button className="btn btn-primary search-button" onClick={this.getSearchResults}>Search!</button></span>
+          <input name="game-query" onChange={this.handleChange} /><span><button className="btn btn-primary search-button" onClick={this.getSearchResults}>Search!</button></span>
         </form>
+        <div className="search-results-zone">
+        {games.map((game) => <SearchGameCard key={game.name} game={game} />)}
+        </div>
        </>
      );
    }
