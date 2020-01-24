@@ -7,6 +7,7 @@ class SearchGameCard extends React.Component {
     const { game } = this.props;
     const { genres } = this.props.game;
     const { platforms } = this.props.game;
+    const { metacritic } = this.props.game;
 
     return (
       <div className="flip-card">
@@ -21,8 +22,9 @@ class SearchGameCard extends React.Component {
           <p className="genres">{genres.map((g) => g.name).join(', ')}</p>
           <div className="additional-info">
             <p className="released">Released: {game.released}</p>
-            <p className="platforms">Platforms: {platforms.map((p) => p.platform.name).join(', ')}</p>
-            <p className="metacritic">Metacritic Rating:  {isNaN(game.metacritic) ? 'No score' : game.metacritic}</p>
+            
+            { platforms === null ? <p></p> : <p className="platforms">Platforms: {platforms.map((p) => p.platform.name).join(', ')}</p>}
+            { metacritic === null ? <p></p> : <p className="metacritic">Metacritic Rating: {metacritic}</p>}
           </div>
           <div className="add-to-collection">
             <p className="add-to-collection-text">add to collection</p><span className="plus-icon"><i className="far fa-plus-square fa-4x"></i></span>
