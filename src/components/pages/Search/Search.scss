@@ -14,3 +14,9 @@ input {
   border: 2px solid rgb(151, 226, 255);
   height: 2.8em;
 }
+
+.search-results-zone {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
