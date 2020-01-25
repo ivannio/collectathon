@@ -6,6 +6,7 @@ import rawgData from '../../../helpers/data/rawgData';
 import './Search.scss';
 
 import SearchGameCard from '../SearchGameCard/SearchGameCard';
+import AddForm from '../AddForm/AddForm';
 
 class Search extends React.Component {
   state = {
@@ -57,8 +58,8 @@ class Search extends React.Component {
         <form>
           <input name="game-query" onChange={this.handleChange} /><span><button className="btn btn-primary search-button" onClick={this.getSearchResults}>Search!</button></span>
         </form>
-        <Modal show={show} onClose={this.close} transitionSpeed={500} closeOnOuterClick={true}>
-          <AddForm selectedGame={selectedGame}/>
+        <Modal show={show} onClose={this.close} transitionSpeed={3000} closeOnOuterClick={true}>
+          <AddForm selectedGame={selectedGame} hideModal={this.hideModal}/>
           </Modal>
         <div className="search-results-zone">
         {games.map((game) => <SearchGameCard key={game.name} game={game} showModal={this.showModal} hideModal={this.hideModal} setSelectedGame={this.setSelectedGame} />)}
