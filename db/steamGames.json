@@ -1,0 +1,8 @@
+{
+  "steamGame1": {
+    "name": "Steam Game Name",
+    "img_logo_url": "imageurl.png",
+    "playtime-forever": 666,
+    "uid": "uid"
+  }
+}

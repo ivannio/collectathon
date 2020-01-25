@@ -1,0 +1,13 @@
+{
+  "game1": {
+    "name": "The Dang Name Of The Dang Game",
+    "platform": "platform",
+    "released": "20-20-2020",
+    "genres": "Fiction, Seed-Data, Ethereal",
+    "background_image": "something.jpg",
+    "condition": "N/A",
+    "hasBox": true,
+    "hasManual": false,
+    "uid": "uid"
+  }
+}

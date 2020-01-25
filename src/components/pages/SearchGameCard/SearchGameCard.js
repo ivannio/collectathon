@@ -22,7 +22,6 @@ class SearchGameCard extends React.Component {
           <p className="genres">{genres.map((g) => g.name).join(', ')}</p>
           <div className="additional-info">
             <p className="released">Released: {game.released}</p>
-            
             { platforms === null ? <p></p> : <p className="platforms">Platforms: {platforms.map((p) => p.platform.name).join(', ')}</p>}
             { metacritic === null ? <p></p> : <p className="metacritic">Metacritic Rating: {metacritic}</p>}
           </div>
