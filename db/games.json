@@ -1,13 +1,13 @@
 {
   "game1": {
-    "name": "The Dang Name Of The Dang Game",
-    "platform": "platform",
-    "released": "20-20-2020",
-    "genres": "Fiction, Seed-Data, Ethereal",
-    "background_image": "something.jpg",
-    "condition": "N/A",
+    "name": "The Legend of Zelda: Breath of the Wild",
+    "platform": "Nintendo Switch",
+    "released": "2017-03-02",
+    "genres": "Adventure, Action, RPG",
+    "background_image": "https://media.rawg.io/media/games/cc1/cc196a5ad763955d6532cdba236f730c.jpg",
+    "condition": "NM",
     "hasBox": true,
     "hasManual": false,
-    "uid": "uid"
+    "uid": "4Aha9p88Wee9VLhajwogqVGaCiz2"
   }
 }

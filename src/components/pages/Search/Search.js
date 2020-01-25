@@ -1,5 +1,7 @@
 import React from 'react';
+import Modal from 'simple-react-modal';
 import rawgData from '../../../helpers/data/rawgData';
+
 
 import './Search.scss';
 
@@ -9,6 +11,20 @@ class Search extends React.Component {
   state = {
     input: '',
     games: [],
+    show: false,
+    selectedGame: {},
+  }
+
+  showModal = () => {
+    this.setState({ show: true });
+  }
+
+  hideModal = () => {
+    this.setState({ show: false });
+  }
+
+  setSelectedGame = (game) => {
+    this.setState({ selectedGame: game });
   }
 
   getRawgSearch = (searchQuery) => {
@@ -33,14 +49,19 @@ class Search extends React.Component {
 
    render() {
      const { games } = this.state;
+     const { show } = this.state;
+     const { selectedGame } = this.state;
      return (
        <>
-        <h1>Search for a game</h1>
+        <h1 className="find-a-game">Search For A Game</h1>
         <form>
           <input name="game-query" onChange={this.handleChange} /><span><button className="btn btn-primary search-button" onClick={this.getSearchResults}>Search!</button></span>
         </form>
+        <Modal show={show} onClose={this.close} transitionSpeed={500} closeOnOuterClick={true}>
+          <AddForm selectedGame={selectedGame}/>
+          </Modal>
         <div className="search-results-zone">
-        {games.map((game) => <SearchGameCard key={game.name} game={game} />)}
+        {games.map((game) => <SearchGameCard key={game.name} game={game} showModal={this.showModal} hideModal={this.hideModal} setSelectedGame={this.setSelectedGame} />)}
         </div>
        </>
      );
