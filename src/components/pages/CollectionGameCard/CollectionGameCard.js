@@ -1,8 +1,18 @@
 import React from 'react';
+import gameData from '../../../helpers/data/gameData';
 
 import './CollectionGameCard.scss';
 
 class CollectionGameCard extends React.Component {
+  handleDeleteClick = (e) => {
+    e.preventDefault();
+    gameData.deleteGame(this.props.game.id)
+      .then(() => {
+        this.props.populateGames();
+      })
+      .catch((error) => console.error('error deleting game', error));
+  }
+
   render() {
     const { game } = this.props;
 
