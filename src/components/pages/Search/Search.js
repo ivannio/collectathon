@@ -52,6 +52,7 @@ class Search extends React.Component {
      const { games } = this.state;
      const { show } = this.state;
      const { selectedGame } = this.state;
+     const { uid } = this.props;
      return (
        <>
         <h1 className="find-a-game">Search For A Game</h1>
@@ -59,7 +60,7 @@ class Search extends React.Component {
           <input name="game-query" onChange={this.handleChange} /><span><button className="btn btn-primary search-button" onClick={this.getSearchResults}>Search!</button></span>
         </form>
         <Modal show={show} onClose={this.close} transitionSpeed={3000} closeOnOuterClick={true}>
-          <AddForm selectedGame={selectedGame} hideModal={this.hideModal}/>
+          <AddForm selectedGame={selectedGame} hideModal={this.hideModal} uid={uid}/>
           </Modal>
         <div className="search-results-zone">
         {games.map((game) => <SearchGameCard key={game.name} game={game} showModal={this.showModal} hideModal={this.hideModal} setSelectedGame={this.setSelectedGame} />)}

@@ -1,5 +1,5 @@
 .add-form {
-  padding: 2em;
+  padding: 1em;
   font-family: 'Contrail One', cursive;
   background-color: rgb(49, 49, 49);
   border-radius: 7px;
@@ -7,4 +7,22 @@
   margin-bottom: -0.5em;
   margin-right: -0.5em;
   margin-left: -0.5em;
+}
+
+.user-specifics {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.buttonz {
+  margin-top: 2em;
+}
+
+.close-btn {
+  margin-right: 1.5em;
+}
+
+.save-btn {
+  margin-left: 1.5em;
 }

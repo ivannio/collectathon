@@ -43,8 +43,8 @@ class Collection extends React.Component {
     const { myGames } = this.state;
     return (
       <>
-      {this.getSteamGames(mySteamId)}
-      {this.getSteamUser(mySteamId)}
+      {/* {this.getSteamGames(mySteamId)}
+      {this.getSteamUser(mySteamId)} */}
       <h1>My Collection</h1>
       <div className="game-zone">
         {myGames.map((game) => <CollectionGameCard key={game.name} game={game} />)}
