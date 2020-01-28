@@ -16,11 +16,19 @@ class CollectionGameCard extends React.Component {
         </div>
         <div className="collection-game-card-back">
           <h1 className="game-header-back">{game.name}</h1>
-          {/* <p className="genres">{genres.map((g) => g.name).join(', ')}</p> */}
+          <p className="genres">{game.genres}</p>
           <div className="additional-info">
-            <p className="released">Released: {game.released}</p>
-            {/* { platforms === null ? <p></p> : <p className="platforms">Platforms: {platforms.map((p) => p.platform.name).join(', ')}</p>}
-            { metacritic === null ? <p></p> : <p className="metacritic">Metacritic Rating: {metacritic}</p>} */}
+            <p className="released details-text">Released: {game.released}</p>
+            <p className="platform details-text">Platform: {game.platform}</p>
+            <p className="condition details-text">Condition: {game.condition}</p>
+            <p className="hasBox details-text">Has Box?: {game.hasBox}</p>
+            <p className="hasManual details-text">Has Manual?: {game.hasManual}</p>
+          </div>
+          <div className="delete">
+            <p className="delete-text">remove from collection</p><span className="delete-icon"><i className="fas fa-minus-circle fa-4x" onClick={this.handleDeleteClick}></i></span>
+          </div>
+          <div className="edit">
+            <p className="edit-text">edit details</p><span className="edit-icon"><i className="edit-icon fas fa-edit fa-4x" onClick={this.handleEditClick}></i></span>
           </div>
         </div>
         </div>
