@@ -24,7 +24,7 @@ class MyNavBar extends React.Component {
             <Link className="nav-link" to={`collection/${uid}`}>My Collection</Link>
             </li>
             <li className="nav-item">
-            <button className="nav-link btn btn-danger" onClick={this.logMeOut}>Logout</button>
+            <button className="nav-link btn btn-warning" onClick={this.logMeOut}>Logout</button>
             </li>
           </ul>
         );
@@ -34,8 +34,8 @@ class MyNavBar extends React.Component {
 
     return (
       <div className="MyNavbar">
-        <nav className="navbar navbar-expand-lg navbar-light bg-light">
-          <Link className="navbar-brand" to="/">Collectathon</Link>
+        <nav className="navbar navbar-expand-lg navbar-light">
+          <Link className="navbar-brand" to="/"><img className="brand" src="https://i.imgur.com/peqIIOH.png" alt="collectathon brand"></img></Link>
           <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>

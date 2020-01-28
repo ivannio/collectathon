@@ -6,7 +6,7 @@ class Home extends React.Component {
   render() {
     return (
       <>
-      <h1>Home Page</h1>
+      <img className="banner" src="https://i.imgur.com/DZplpH3.jpg" alt="collectathon banner"></img>
       </>
     );
   }

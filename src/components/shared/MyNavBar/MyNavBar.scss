@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap');
+
+.brand {
+  max-width: 13em;
+}
+
+.navbar {
+  background-color: rgb(42, 47, 53);
+}
+
+.nav-link {
+  font-family: 'Source Code Pro', monospace;
+  color: white !important;
+  margin-left: 1em;
+  margin-right: 1em;
+}
+
+.nav-link:hover {
+  color: rgb(162, 236, 255) !important;
+}
