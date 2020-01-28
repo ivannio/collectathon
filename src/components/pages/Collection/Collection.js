@@ -30,13 +30,17 @@ class Collection extends React.Component {
       .catch((error) => console.error('error getting Steam profile', error));
   }
 
-  componentDidMount() {
+  populateGames = () => {
     const { uid } = this.props;
     gameData.getGamesByUid(uid)
       .then((response) => {
         this.setState({ myGames: response });
       })
       .catch((error) => console.error('error getting games', error));
+  }
+
+  componentDidMount() {
+    this.populateGames();
   }
 
   render() {
@@ -47,7 +51,7 @@ class Collection extends React.Component {
       {this.getSteamUser(mySteamId)} */}
       <h1>My Collection</h1>
       <div className="game-zone">
-        {myGames.map((game) => <CollectionGameCard key={game.name} game={game} />)}
+        {myGames.map((game) => <CollectionGameCard key={game.name} game={game} populateGames={this.populateGames} />)}
         </div>
       </>
     );

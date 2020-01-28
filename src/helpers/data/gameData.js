@@ -19,4 +19,6 @@ const getGamesByUid = (uid) => new Promise((resolve, reject) => {
 
 const addGame = (newGame) => axios.post(`${baseUrl}/games.json`, newGame);
 
-export default { getGamesByUid, addGame };
+const deleteGame = (gameId) => axios.delete(`${baseUrl}/games/${gameId}.json`);
+
+export default { getGamesByUid, addGame, deleteGame };
