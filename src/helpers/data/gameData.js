@@ -21,4 +21,11 @@ const addGame = (newGame) => axios.post(`${baseUrl}/games.json`, newGame);
 
 const deleteGame = (gameId) => axios.delete(`${baseUrl}/games/${gameId}.json`);
 
-export default { getGamesByUid, addGame, deleteGame };
+const updateGame = (gameId, updatedGame) => axios.put(`${baseUrl}/games/${gameId}.json`, updatedGame);
+
+export default {
+  getGamesByUid,
+  addGame,
+  deleteGame,
+  updateGame,
+};

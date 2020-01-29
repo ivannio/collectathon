@@ -12,7 +12,6 @@ class MyNavBar extends React.Component {
 
   render() {
     const { authed } = this.props;
-    const { uid } = this.props;
     const buildNavBar = (props) => {
       if (authed) {
         return (
@@ -21,7 +20,7 @@ class MyNavBar extends React.Component {
               <Link className="nav-link" to="/search">Game Search</Link>
             </li>
             <li className="nav-item">
-            <Link className="nav-link" to={`collection/${uid}`}>My Collection</Link>
+            <Link className="nav-link" to="/collection">My Collection</Link>
             </li>
             <li className="nav-item">
             <button className="nav-link btn btn-warning" onClick={this.logMeOut}>Logout</button>

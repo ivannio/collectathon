@@ -13,6 +13,12 @@ class CollectionGameCard extends React.Component {
       .catch((error) => console.error('error deleting game', error));
   }
 
+  handleEditClick = (e) => {
+    e.preventDefault();
+    this.props.showModal();
+    this.props.setSelectedGame(this.props.game);
+  }
+
   render() {
     const { game } = this.props;
 
