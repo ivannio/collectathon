@@ -91,7 +91,7 @@
 
 .delete-icon:hover {
   cursor: pointer;
-  color: rgb(255, 53, 53);
+  color: rgb(255, 53, 53) !important;
 }
 
 .edit {
@@ -99,7 +99,7 @@
   right: 0;
   bottom: 5em;
   margin-right: 0.4em;
-  color: rgb(184, 119, 23);
+  color: rgb(219, 132, 0);
 }
 
 .edit-text {
@@ -111,5 +111,25 @@
 
 .edit-icon:hover {
   cursor: pointer;
-  color: rgb(255, 123, 0);
+  color: rgb(255, 123, 0) !important;
+}
+
+.honk {
+  position: absolute;
+  right: 0;
+  bottom: 10em;
+  margin-right: 0.9em;
+  color: rgb(25, 82, 187);
+}
+
+.honk-icon:hover {
+  cursor: pointer;
+  color: rgb(44, 118, 255) !important;
+}
+
+.honk-text {
+  font-size: 1.25em;
+  line-height: 3em;
+  float: left;
+  margin-right: 0.7em;
 }
