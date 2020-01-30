@@ -3,18 +3,22 @@
 input {
   width: 39%;
   box-sizing: border-box;
-  border: 2px solid rgb(151, 226, 255);
+  border: 0.2em solid rgb(151, 226, 255);
   border-radius: 4px;
   font-size: 16px;
   background-color: rgb(255, 255, 255);
   padding: 10px;
 }
 
+.search-page {
+  margin-bottom: 5em;
+}
 
 .search-button {
   margin-left: 0.5em;
   border: 2px solid rgb(151, 226, 255);
   height: 2.8em;
+  margin-bottom: 0.3em;
 }
 
 .search-results-zone {
@@ -40,9 +44,14 @@ input {
   font-family: 'Press Start 2P', cursive;
   font-size: 3em;
   border-radius: 7px;
+  border: 0.09em solid black;
   margin-bottom: 0.6em;
 }
 
 .my-modal {
   transition: 'opacity 1s ease-in';
+}
+
+.border {
+  border: 0.26em solid black;
 }

@@ -65,7 +65,7 @@ class Collection extends React.Component {
     const { show } = this.state;
     const { uid } = this.props;
     return (
-      <>
+      <div className="collection-page">
       {/* {this.getSteamGames(mySteamId)}
       {this.getSteamUser(mySteamId)} */}
       <h1 className="collection-header">My Collection</h1>
@@ -75,7 +75,7 @@ class Collection extends React.Component {
       <div className="game-zone">
         {myGames.map((game) => <CollectionGameCard key={game.id} game={game} showModal={this.showModal} hideModal={this.hideModal} populateGames={this.populateGames} setSelectedGame={this.setSelectedGame}/>)}
         </div>
-      </>
+      </div>
     );
   }
 }

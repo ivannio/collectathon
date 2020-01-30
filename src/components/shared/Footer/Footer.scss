@@ -1,0 +1,40 @@
+.footer {
+  background-color: rgb(42, 47, 53);
+  padding-top: 1.5em;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer-logo {
+  max-width: 9em;
+  margin: 0.2em;
+  margin-bottom: 0.5em;
+}
+
+.fa-copyright {
+  color: rgb(162, 236, 255);
+  margin: 0.3em;
+}
+
+.twenty-twenty {
+  color: rgb(162, 236, 255);
+  font-family: 'Source Code Pro', monospace;
+  font-weight: bolder;
+  display: inline-block;
+  margin: 0.2em;
+}
+
+.rawg-link {
+  font-family: 'Source Code Pro', monospace;
+  color: white;
+}
+
+.rawg-a {
+  font-family: 'Source Code Pro', monospace;
+  color: rgb(162, 236, 255);
+}
+
+.rawg-a:hover {
+  color: rgb(162, 236, 255);
+}
