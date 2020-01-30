@@ -14,6 +14,7 @@ import Auth from '../components/pages/Auth/Auth';
 import Home from '../components/pages/Home/Home';
 import Search from '../components/pages/Search/Search';
 import Collection from '../components/pages/Collection/Collection';
+import Footer from '../components/shared/Footer/Footer';
 
 import './App.scss';
 import authData from '../helpers/data/authData';
@@ -63,6 +64,7 @@ class App extends React.Component {
           <PrivateRoute path="/search" exact component={Search} authed={authed} uid={uid} />
           <PrivateRoute path="/collection/" exact component={Collection} authed={authed} uid={uid} />
           </Switch>
+          <Footer />
         </Router>
       </div>
     );
