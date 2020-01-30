@@ -1,7 +1,7 @@
 import React from 'react';
+import { PacmanLoader } from 'react-spinners';
 import Modal from 'simple-react-modal';
 import rawgData from '../../../helpers/data/rawgData';
-
 
 import './Search.scss';
 
@@ -14,6 +14,7 @@ class Search extends React.Component {
     games: [],
     show: false,
     selectedGame: {},
+    loading: false,
   }
 
   showModal = () => {
@@ -33,6 +34,7 @@ class Search extends React.Component {
       .then((response) => {
         const searchResults = response.results;
         this.setState({ games: searchResults });
+        this.setState({ loading: false });
       })
       .catch((error) => console.error('error retreiving rawg data', error));
   };
@@ -44,6 +46,7 @@ class Search extends React.Component {
 
    getSearchResults = (e) => {
      e.preventDefault();
+     this.setState({ loading: true });
      const { input } = this.state;
      this.getRawgSearch(input);
    }
@@ -62,6 +65,9 @@ class Search extends React.Component {
         <Modal show={show} onClose={this.close} transitionSpeed={3000} closeOnOuterClick={true}>
           <AddForm selectedGame={selectedGame} hideModal={this.hideModal} uid={uid}/>
           </Modal>
+          <div className="loader-div">
+          <PacmanLoader size={150} loading={this.state.loading} color={'#FFEE00'} />
+          </div>
         <div className="search-results-zone">
         {games.map((game) => <SearchGameCard key={game.name} game={game} showModal={this.showModal} hideModal={this.hideModal} setSelectedGame={this.setSelectedGame} />)}
         </div>
