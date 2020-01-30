@@ -62,7 +62,7 @@ class Search extends React.Component {
         <form>
           <input name="game-query" onChange={this.handleChange} /><span><button className="btn btn-primary search-button" onClick={this.getSearchResults}>Search!</button></span>
         </form>
-        <Modal show={show} onClose={this.close} transitionSpeed={3000} closeOnOuterClick={true}>
+        <Modal show={show} onClose={this.close} transitionSpeed={1000} closeOnOuterClick={true}>
           <AddForm selectedGame={selectedGame} hideModal={this.hideModal} uid={uid}/>
           </Modal>
           <div className="loader-div">
