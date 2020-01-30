@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { AwesomeButton } from 'react-awesome-button';
+import 'react-awesome-button/dist/themes/theme-rickiest.css';
 import firebase from 'firebase/app';
 
 import './MyNavBar.scss';
@@ -17,13 +19,13 @@ class MyNavBar extends React.Component {
         return (
           <ul className="navbar-nav ml-auto">
             <li className="nav-item">
-              <Link className="nav-link" to="/search">Game Search</Link>
+              <Link className="nav-link linkz" to="/search">Game Search</Link>
             </li>
             <li className="nav-item">
-            <Link className="nav-link" to="/collection">My Collection</Link>
+            <Link className="nav-link linkz" to="/collection">My Collection</Link>
             </li>
-            <li className="nav-item">
-            <button className="nav-link btn btn-warning" onClick={this.logMeOut}>Logout</button>
+            <li className="nav-item" onClick={this.logMeOut}>
+            <AwesomeButton type="secondary">Logout</AwesomeButton>
             </li>
           </ul>
         );

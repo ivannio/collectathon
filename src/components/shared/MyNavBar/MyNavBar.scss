@@ -15,6 +15,14 @@
   margin-right: 1em;
 }
 
-.nav-link:hover {
+.linkz:hover {
   color: rgb(162, 236, 255) !important;
+}
+
+.aws-btn {
+    --button-secondary-color: #fffc6c;
+  --button-secondary-color-dark: #b9b500;
+  --button-secondary-color-light: #6c6a00;
+  --button-secondary-color-hover: #fffb3e;
+  --button-secondary-border: none; 
 }
