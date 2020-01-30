@@ -1,5 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import gameData from '../../../helpers/data/gameData';
+import Honker from '../../shared/Honker/Honker';
+
 
 import './CollectionGameCard.scss';
 
@@ -41,11 +44,12 @@ class CollectionGameCard extends React.Component {
             <p className="hasManual details-text">Has Manual?: {game.hasManual}</p>
           </div>
           <div className="delete">
-            <p className="delete-text">remove from collection</p><span className="delete-icon"><i className="fas fa-minus-circle fa-4x" onClick={this.handleDeleteClick}></i></span>
+            <p className="delete-text">remove from collection</p><span className="delete-icon"><Link style={{ textDecoration: 'none', color: '#a01111' }} className="delete-icon fas fa-minus-circle fa-4x" onClick={this.handleDeleteClick}></Link></span>
           </div>
           <div className="edit">
-            <p className="edit-text">edit details</p><span className="edit-icon"><i className="edit-icon fas fa-edit fa-4x" onClick={this.handleEditClick}></i></span>
+            <p className="edit-text">edit details</p><span className="edit-icon"><Link style={{ textDecoration: 'none', color: '#db8400' }} className="edit-icon fas fa-edit fa-4x" onClick={this.handleEditClick}></Link></span>
           </div>
+          {game.name === 'Untitled Goose Game' ? <Honker /> : ''}
         </div>
         </div>
       </div>
