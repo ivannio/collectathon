@@ -18,7 +18,7 @@ class Auth extends React.Component {
       <div className="Auth">
         <h1 className="auth-header">Login to Continue</h1><br></br>
         <div className="butt" onClick={this.loginEvent}>
-        <AwesomeButton type="primary"><i class="fab fa-google fa-2x"></i>Login with Google</AwesomeButton>
+        <AwesomeButton type="primary"><i className="fab fa-google fa-2x"></i>Login with Google</AwesomeButton>
         </div>
       </div>
     );
