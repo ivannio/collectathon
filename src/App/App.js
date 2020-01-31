@@ -34,6 +34,11 @@ class App extends React.Component {
   state = {
     authed: false,
     uid: '',
+    currentPage: '',
+  }
+
+  setCurrentPage = (urlString) => {
+    this.setState({ currentPage: urlString });
   }
 
   componentDidMount() {
@@ -52,6 +57,7 @@ class App extends React.Component {
   }
 
   render() {
+    const { currentPage } = this.state;
     const { authed } = this.state;
     const { uid } = this.state;
     return (
@@ -61,10 +67,10 @@ class App extends React.Component {
           <Switch>
           <PrivateRoute path="/" exact component={Home} authed={authed} />
           <PublicRoute path="/auth" exact component={Auth} authed={authed} />
-          <PrivateRoute path="/search" exact component={Search} authed={authed} uid={uid} />
+          <PrivateRoute path="/search/" setCurrentPage={this.setCurrentPage} exact component={Search} authed={authed} uid={uid} />
           <PrivateRoute path="/collection/" exact component={Collection} authed={authed} uid={uid} />
           </Switch>
-          <Footer />
+          <Footer currentPage={currentPage}/>
         </Router>
       </div>
     );

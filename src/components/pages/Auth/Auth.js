@@ -1,4 +1,6 @@
 import React from 'react';
+import { AwesomeButton } from 'react-awesome-button';
+import 'react-awesome-button/dist/themes/theme-rickiest.css';
 import firebase from 'firebase/app';
 import 'firebase/auth';
 
@@ -14,8 +16,10 @@ class Auth extends React.Component {
   render() {
     return (
       <div className="Auth">
-        <h1 className="auth-header">login to continue</h1><br></br>
-        <button className="btn btn-success" onClick={this.loginEvent}>Login with Google</button>
+        <h1 className="auth-header">Login to Continue</h1><br></br>
+        <div className="butt" onClick={this.loginEvent}>
+        <AwesomeButton type="primary"><i className="fab fa-google fa-2x"></i>Login with Google</AwesomeButton>
+        </div>
       </div>
     );
   }

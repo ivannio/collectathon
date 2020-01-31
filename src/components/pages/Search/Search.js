@@ -1,4 +1,6 @@
 import React from 'react';
+import { AwesomeButton } from 'react-awesome-button';
+import 'react-awesome-button/dist/themes/theme-rickiest.css';
 import { PacmanLoader } from 'react-spinners';
 import Modal from 'simple-react-modal';
 import rawgData from '../../../helpers/data/rawgData';
@@ -51,6 +53,12 @@ class Search extends React.Component {
      this.getRawgSearch(input);
    }
 
+   getPopularGames = (e) => {
+     e.preventDefault();
+     this.setState({ loading: true });
+     this.getRawgSearch('');
+   }
+
    render() {
      const { games } = this.state;
      const { show } = this.state;
@@ -60,9 +68,9 @@ class Search extends React.Component {
        <div className="search-page">
         <h1 className="find-a-game">Search For A Game</h1>
         <form>
-          <input name="game-query" onChange={this.handleChange} /><span><button className="btn btn-primary search-button" onClick={this.getSearchResults}>Search!</button></span>
+          <input name="game-query" onChange={this.handleChange} /><span onClick={this.getSearchResults} className="search-button"><AwesomeButton type="primary">Search!</AwesomeButton></span><span onClick={this.getPopularGames} className="popular-games-button"><AwesomeButton type="link" >Get Popular Games</AwesomeButton></span>
         </form>
-        <Modal show={show} onClose={this.close} transitionSpeed={3000} closeOnOuterClick={true}>
+        <Modal show={show} onClose={this.close} transitionSpeed={1000} closeOnOuterClick={true}>
           <AddForm selectedGame={selectedGame} hideModal={this.hideModal} uid={uid}/>
           </Modal>
           <div className="loader-div">
