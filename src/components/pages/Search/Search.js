@@ -68,7 +68,7 @@ class Search extends React.Component {
        <div className="search-page">
         <h1 className="find-a-game">Search For A Game</h1>
         <form>
-          <input name="game-query" onChange={this.handleChange} /><span onClick={this.getSearchResults} className="search-button"><AwesomeButton type="primary">Search!</AwesomeButton></span><span onClick={this.getPopularGames} className="popular-games-button"><AwesomeButton type="link" >Get Popular Games</AwesomeButton></span>
+          <input name="game-query" onChange={this.handleChange} /><span onClick={this.getSearchResults} className="search-button"><AwesomeButton type="primary">Search!</AwesomeButton></span><span onClick={this.getPopularGames} className="popular-games-button"><AwesomeButton type="github" >Get Popular Games</AwesomeButton></span>
         </form>
         <Modal show={show} onClose={this.close} transitionSpeed={1000} closeOnOuterClick={true}>
           <AddForm selectedGame={selectedGame} hideModal={this.hideModal} uid={uid}/>
