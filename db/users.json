@@ -1,8 +1,6 @@
 {
   "user1": {
     "uid": "uid",
-    "steamPersona": "Ivannio",
-    "steamAvatarUrl": "something.jpeg",
-    "steamGameCount": 44
+    "steamID": "12345678901234567"
   }
 }
