@@ -17,6 +17,20 @@ const getGamesByUid = (uid) => new Promise((resolve, reject) => {
     .catch((error) => reject(error));
 });
 
+const getSteamGamesByUid = (uid) => new Promise((resolve, reject) => {
+  axios.get(`${baseUrl}/steamGames.json?orderBy="uid"&equalTo="${uid}"`)
+    .then((response) => {
+      const mySteamGames = response.data;
+      const steamGames = [];
+      Object.keys(mySteamGames).forEach((fbId) => {
+        mySteamGames[fbId].id = fbId;
+        steamGames.push(mySteamGames[fbId]);
+      });
+      resolve(steamGames);
+    })
+    .catch((error) => reject(error));
+});
+
 const addGame = (newGame) => axios.post(`${baseUrl}/games.json`, newGame);
 
 const deleteGame = (gameId) => axios.delete(`${baseUrl}/games/${gameId}.json`);
@@ -28,4 +42,5 @@ export default {
   addGame,
   deleteGame,
   updateGame,
+  getSteamGamesByUid,
 };

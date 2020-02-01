@@ -10,7 +10,7 @@
   border-radius: 7px;
 }
 
-.collection-header {
+.collection-header, .steam-header {
   display: inline-block;
   padding: 0.2em;
   background-color: rgba(255, 255, 255, 0.705);
@@ -26,5 +26,5 @@
 }
 
 .collection-page {
-  margin-bottom: 5em;
+  margin-bottom: 9em;
 }

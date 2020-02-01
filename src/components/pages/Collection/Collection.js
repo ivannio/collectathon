@@ -1,4 +1,6 @@
 import React from 'react';
+import { AwesomeButton } from 'react-awesome-button';
+import 'react-awesome-button/dist/themes/theme-rickiest.css';
 import Modal from 'simple-react-modal';
 import steamData from '../../../helpers/data/steamData';
 import gameData from '../../../helpers/data/gameData';
@@ -14,6 +16,7 @@ class Collection extends React.Component {
     myGames: [],
     selectedGame: {},
     show: false,
+    steamImported: false,
   }
 
   showModal = () => {
@@ -55,8 +58,18 @@ class Collection extends React.Component {
       .catch((error) => console.error('error getting games', error));
   }
 
+  getSteamInfo = () => {
+    const { uid } = this.props;
+    gameData.getSteamGamesByUid(uid)
+      .then((response) => {
+        (response.length !== 0) ? this.setState({ steamImported: true }) : this.setState({ steamImported: false });
+      })
+      .catch((error) => console.error('error getting steam games', error));
+  }
+
   componentDidMount() {
     this.populateGames();
+    this.getSteamInfo();
   }
 
   render() {
@@ -64,6 +77,7 @@ class Collection extends React.Component {
     const { selectedGame } = this.state;
     const { show } = this.state;
     const { uid } = this.props;
+    const { steamImported } = this.state;
     return (
       <div className="collection-page">
       {/* {this.getSteamGames(mySteamId)}
@@ -75,6 +89,12 @@ class Collection extends React.Component {
       <div className="game-zone">
         {myGames.map((game) => <CollectionGameCard key={game.id} game={game} showModal={this.showModal} hideModal={this.hideModal} populateGames={this.populateGames} setSelectedGame={this.setSelectedGame}/>)}
         </div>
+        {
+          !steamImported ? <div className="import-steam">
+          <h1 className="steam-header">Import Steam Collection</h1><br></br>
+          <AwesomeButton type="github">Import Steam Games</AwesomeButton>
+          </div> : <div></div>
+        }
       </div>
     );
   }
