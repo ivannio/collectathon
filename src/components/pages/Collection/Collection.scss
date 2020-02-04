@@ -10,6 +10,18 @@
   border-radius: 7px;
 }
 
+.steam-game-zone {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  background-color: rgba(59, 59, 59, 0.705);
+  margin-left: 13em;
+  margin-right: 13em;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  border-radius: 7px;
+}
+
 .collection-header, .steam-header {
   display: inline-block;
   padding: 0.2em;

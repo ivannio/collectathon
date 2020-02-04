@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { AwesomeButton } from 'react-awesome-button';
-import { PacmanLoader } from 'react-spinners';
 import 'react-awesome-button/dist/themes/theme-rickiest.css';
 import Modal from 'simple-react-modal';
 import steamData from '../../../helpers/data/steamData';
@@ -24,6 +23,10 @@ class Collection extends React.Component {
     steamId: '',
     steamGames: [],
     steamUser: {},
+  }
+
+  setSteamImported = () => {
+    this.setState({ steamImported: true });
   }
 
   loadingTrue = () => {
@@ -57,15 +60,19 @@ class Collection extends React.Component {
   getSteamGames = (steamId) => {
     steamData.getSteamGamesBySteamId(steamId)
       .then((response) => {
-        console.log(response);
+        const { games } = response.response;
+        this.setState({ steamGames: games });
       })
       .catch((error) => console.error('error getting Steam games', error));
   }
 
   getSteamUser = (steamId) => {
+    console.log(steamId);
     steamData.getSteamUserBySteamId(steamId)
       .then((response) => {
         console.log(response);
+        const user = response.response.players[0];
+        this.setState({ steamUser: user });
       })
       .catch((error) => console.error('error getting Steam profile', error));
   }
@@ -79,18 +86,20 @@ class Collection extends React.Component {
       .catch((error) => console.error('error getting games', error));
   }
 
-  getSteamInfo = () => {
+  isSteamImported = () => {
     const { uid } = this.props;
     userData.getUserByUid(uid)
       .then((response) => {
         (response.length !== 0) ? this.setState({ steamImported: true, steamId: response[0].steamId }) : this.setState({ steamImported: false });
+        (this.state.steamImported) ? this.getSteamUser(this.state.steamId) : this.setState({ steamImported: false });
+        (this.state.steamImported) ? this.getSteamGames(this.state.steamId) : this.setState({ steamImported: false });
       })
-      .catch((error) => console.error('error getting steam games', error));
+      .catch((error) => console.error('error getting user', error));
   }
 
   componentDidMount() {
     this.populateGames();
-    this.getSteamInfo();
+    this.isSteamImported();
   }
 
   render() {
@@ -101,11 +110,10 @@ class Collection extends React.Component {
     const { uid } = this.props;
     const { steamImported } = this.state;
     const { steamId } = this.state;
+    const { steamUser } = this.state;
 
     return (
       <div className="collection-page">
-      {/* {this.getSteamGames(mySteamId)}
-      {this.getSteamUser(mySteamId)} */}
       <h1 className="collection-header">My Collection</h1>
       <Modal show={show} onClose={this.close} transitionSpeed={1000} closeOnOuterClick={true}>
           <UpdateForm selectedGame={selectedGame} hideModal={this.hideModal} uid={uid} populateGames={this.populateGames}/>
@@ -118,15 +126,16 @@ class Collection extends React.Component {
           <h1 className="steam-header">Import Steam Collection</h1><br></br>
           <Link onClick={this.showSteamModal}><AwesomeButton type="github">Import Steam Games</AwesomeButton></Link>
           <Modal show={steamShow} onClose={this.close} transitionSpeed={1000} closeOnOuterClick={true}>
-            <SteamForm getSteamGames={this.getSteamGames} loadingTrue={this.loadingTrue} loadingFalse={this.loadingFalse} uid={uid} hideSteamModal={this.hideSteamModal}></SteamForm>
+            <SteamForm steamId={steamId} isSteamImported={this.isSteamImported} loadingTrue={this.loadingTrue} loadingFalse={this.loadingFalse} uid={uid} hideSteamModal={this.hideSteamModal} setSteamImported={this.setSteamImported} getSteamUser={this.getSteamUser}></SteamForm>
           </Modal>
           </div>
-            : <div>
-
+            : <div className="steam-user">
+              <h1 className="collection-header">Steam Games</h1>
+              {/* <SteamUserInfo steamUser={steamUser}/> */}
+              <div className="steam-game-zone">
+              </div>
               </div>
         }
-        { this.getSteamGames(steamId) }
-        { this.getSteamUser(steamId) }
       </div>
     );
   }

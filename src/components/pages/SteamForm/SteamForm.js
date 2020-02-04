@@ -21,6 +21,8 @@ class SteamForm extends React.Component {
     userData.addUser(newUser)
       .then(() => {
         this.props.hideSteamModal();
+        this.props.setSteamImported();
+        this.props.isSteamImported();
       })
       .catch((error) => console.error('error adding user', error));
   }
