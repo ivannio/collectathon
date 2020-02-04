@@ -9,6 +9,7 @@ import userData from '../../../helpers/data/userData';
 import CollectionGameCard from '../CollectionGameCard/CollectionGameCard';
 import UpdateForm from '../UpdateForm/UpdateForm';
 import SteamForm from '../SteamForm/SteamForm';
+import SteamUser from '../SteamUser/SteamUser';
 
 import './Collection.scss';
 
@@ -67,10 +68,8 @@ class Collection extends React.Component {
   }
 
   getSteamUser = (steamId) => {
-    console.log(steamId);
     steamData.getSteamUserBySteamId(steamId)
       .then((response) => {
-        console.log(response);
         const user = response.response.players[0];
         this.setState({ steamUser: user });
       })
@@ -129,11 +128,13 @@ class Collection extends React.Component {
             <SteamForm steamId={steamId} isSteamImported={this.isSteamImported} loadingTrue={this.loadingTrue} loadingFalse={this.loadingFalse} uid={uid} hideSteamModal={this.hideSteamModal} setSteamImported={this.setSteamImported} getSteamUser={this.getSteamUser}></SteamForm>
           </Modal>
           </div>
-            : <div className="steam-user">
-              <h1 className="collection-header">Steam Games</h1>
-              {/* <SteamUserInfo steamUser={steamUser}/> */}
-              <div className="steam-game-zone">
-              </div>
+            : <div className="steam-section">
+                <h1 className="collection-header">Steam Games</h1>
+                <div className="steam-user">
+                  <SteamUser steamUser={steamUser}/>
+                </div>
+                <div className="steam-game-zone">
+                </div>
               </div>
         }
       </div>
