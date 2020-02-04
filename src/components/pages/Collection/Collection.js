@@ -129,7 +129,7 @@ class Collection extends React.Component {
           </Modal>
           </div>
             : <div className="steam-section">
-                <h1 className="collection-header">Steam Games</h1>
+                <h1 className="collection-header">Steam Games</h1><br></br>
                 <div className="steam-user">
                   <SteamUser steamUser={steamUser}/>
                 </div>
