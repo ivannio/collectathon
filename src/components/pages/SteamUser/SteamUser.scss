@@ -1,0 +1,51 @@
+.steam-user-details {
+  align-self: center;
+  display: inline-flex;
+  flex-direction: row;
+  padding: 1em;
+}
+
+.avatar-img {
+  border: 0.2em solid rgb(131, 131, 131);
+  border-radius: 7px;
+}
+
+.user-persona {
+  font-family: 'Contrail One', cursive;
+  color: white;
+  margin-left: 0.4em;
+  margin-top: 0.3em;
+}
+
+.profile-link {
+  font-family: 'Source Code Pro', monospace;
+  color: white;
+  text-decoration: none !important;
+  margin-left: 1.5em;
+  margin-top: 1.5em;
+}
+
+.profile-link:hover {
+  color: rgb(162, 236, 255);
+}
+
+.online {
+  margin-left: 2em;
+  color: rgb(0, 138, 0);
+  margin-top: 0.5em;
+}
+
+.offline {
+  margin-left: 2em;
+  color: rgba(29, 29, 29, 0.959);
+  margin-top: 0.5em;
+}
+
+.online-now, .offline-now {
+  float: left;
+  font-family: 'Contrail One', cursive;
+  font-size: 1.25em;
+  line-height: 3em;
+  margin-right: 0.7em;
+  margin-bottom: 0em;
+}

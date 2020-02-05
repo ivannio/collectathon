@@ -74,7 +74,7 @@ class Search extends React.Component {
           <AddForm selectedGame={selectedGame} hideModal={this.hideModal} uid={uid}/>
           </Modal>
           <div className="loader-div">
-          <PacmanLoader size={150} loading={this.state.loading} color={'#FFEE00'} />
+          <PacmanLoader size={100} loading={this.state.loading} color={'#FFEE00'} />
           </div>
         <div className="search-results-zone">
         {games.map((game) => <SearchGameCard key={game.name} game={game} showModal={this.showModal} hideModal={this.hideModal} setSelectedGame={this.setSelectedGame} />)}

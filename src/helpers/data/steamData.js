@@ -18,4 +18,12 @@ const getSteamUserBySteamId = (steamId) => new Promise((resolve, reject) => {
     .catch((error) => reject(error));
 });
 
+// const getSteamUserBySteamId = (steamId) => new Promise((resolve, reject) => {
+//       resolve({
+
+//       });
+//     // })
+//     // .catch((error) => reject(error));
+// });
+
 export default { getSteamGamesBySteamId, getSteamUserBySteamId };
