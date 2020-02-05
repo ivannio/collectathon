@@ -10,6 +10,7 @@ import CollectionGameCard from '../CollectionGameCard/CollectionGameCard';
 import UpdateForm from '../UpdateForm/UpdateForm';
 import SteamForm from '../SteamForm/SteamForm';
 import SteamUser from '../SteamUser/SteamUser';
+import SteamGameCard from '../SteamGameCard/SteamGameCard';
 
 import './Collection.scss';
 
@@ -110,6 +111,7 @@ class Collection extends React.Component {
     const { steamImported } = this.state;
     const { steamId } = this.state;
     const { steamUser } = this.state;
+    const { steamGames } = this.state;
 
     return (
       <div className="collection-page">
@@ -134,6 +136,7 @@ class Collection extends React.Component {
                   <SteamUser steamUser={steamUser}/>
                 </div>
                 <div className="steam-game-zone">
+                  {steamGames.map((steamGame) => <SteamGameCard key={steamGame.id} steamGame={steamGame} />)}
                 </div>
               </div>
         }
