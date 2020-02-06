@@ -112,6 +112,7 @@ class Collection extends React.Component {
     const { steamId } = this.state;
     const { steamUser } = this.state;
     const { steamGames } = this.state;
+    const totalGames = steamGames.length;
 
     return (
       <div className="collection-page">
@@ -133,7 +134,7 @@ class Collection extends React.Component {
             : <div className="steam-section">
                 <h1 className="collection-header">Steam Games</h1><br></br>
                 <div className="steam-user">
-                  <SteamUser steamUser={steamUser}/>
+                  <SteamUser totalGames={totalGames} steamUser={steamUser}/>
                 </div>
                 <div className="steam-game-zone">
                   {steamGames.map((steamGame) => <SteamGameCard key={steamGame.id} steamGame={steamGame} />)}
