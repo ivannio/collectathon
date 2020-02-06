@@ -13,7 +13,7 @@
 .user-persona {
   font-family: 'Contrail One', cursive;
   color: white;
-  margin-left: 0.4em;
+  margin-left: 0.5em;
   margin-top: 0.3em;
 }
 
@@ -29,23 +29,20 @@
   color: rgb(162, 236, 255);
 }
 
-.online {
-  margin-left: 2em;
-  color: rgb(0, 138, 0);
-  margin-top: 0.5em;
-}
-
-.offline {
-  margin-left: 2em;
-  color: rgba(29, 29, 29, 0.959);
-  margin-top: 0.5em;
-}
-
-.online-now, .offline-now {
-  float: left;
+.game-count {
   font-family: 'Contrail One', cursive;
-  font-size: 1.25em;
-  line-height: 3em;
-  margin-right: 0.7em;
-  margin-bottom: 0em;
+  color: white;
+}
+
+.game-count-num {
+  font-family: 'Contrail One', cursive;
+  color: rgb(162, 236, 255);
+  float: bottom;
+}
+
+.game-count-div {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: -1em;
+  margin-left: 1.5em;
 }
