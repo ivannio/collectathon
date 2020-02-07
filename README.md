@@ -16,11 +16,11 @@ Collectathon is a video game collection tracker. Login with Google then navigate
 * [Honkify.js](https://honkify.netlify.com/)
 
 ### Screenshots
-![home page]()
-![search page]()
-![collection-page]()
-![card-flip]()
-![steam]()
+![home page](https://raw.githubusercontent.com/ivannio/collectathon/master/src/screenshots/collectathon-screenshot.png)
+![search page](https://raw.githubusercontent.com/ivannio/collectathon/master/src/screenshots/collectathon-search-page.png)
+![collection-page](https://raw.githubusercontent.com/ivannio/collectathon/master/src/screenshots/collectathon-collection-screenshot.png)
+![card-flip](https://raw.githubusercontent.com/ivannio/collectathon/master/src/screenshots/collectathon-card-flip.png)
+![steam](https://raw.githubusercontent.com/ivannio/collectathon/master/src/screenshots/steam-section.png)
 
 ### How To Run
 
