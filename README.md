@@ -1,5 +1,6 @@
 ## Collectathon
 
+[DEMO THE PROJECT HERE](https://collectathon-b1ce1.firebaseapp.com/)
 Collectathon is a video game collection tracker. Login with Google then navigate to the game search page to find your games and add them to your collection. On the collection page, you'll find a button to import your Steam library. Make sure your profile is set to public and input your steam ID to instantly log your digital collection!
 
 ### Technologies Used
@@ -14,6 +15,7 @@ Collectathon is a video game collection tracker. Login with Google then navigate
 * [react-spinners](https://www.npmjs.com/package/react-spinners)
 * [react-awesome-button](https://github.com/rcaferati/react-awesome-button)
 * [Honkify.js](https://honkify.netlify.com/)
+
 
 ### Screenshots
 ![home page](https://raw.githubusercontent.com/ivannio/collectathon/master/src/screenshots/collectathon-screenshot.png)
