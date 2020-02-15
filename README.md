@@ -1,6 +1,6 @@
 ## Collectathon
 
-[Demo the peoject here!](https://collectathon-b1ce1.firebaseapp.com/)
+[Demo the project here!](https://collectathon-b1ce1.firebaseapp.com/)
 
 Collectathon is a video game collection tracker. Login with Google then navigate to the game search page to find your games and add them to your collection. On the collection page, you'll find a button to import your Steam library. Make sure your profile is set to public and input your steam ID to instantly log your digital collection!
 
